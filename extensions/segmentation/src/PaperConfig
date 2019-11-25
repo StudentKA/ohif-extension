@@ -1,0 +1,36 @@
+import React from "react";
+import paper from "paper";
+
+class PaperConfig extends React.Component {
+
+  init(image, canvas) {
+    paper.setup(canvas);
+
+    // let raster = new paper.Raster(image);
+    let tool = new paper.Tool();
+    paper.activate();
+    let newPath;
+
+    tool.onMouseDown = function (event) {
+      newPath = new paper.Path();
+      newPath.strokeWidth = 4;
+      newPath.strokeColor = 'red';
+    };
+
+    tool.onMouseDrag = function (event) {
+      newPath.add(event.point);
+    };
+
+    tool.onMouseUp = function (event) {
+      if (newPath && newPath.segments.length > 0) {
+        newPath.closed = true;
+        newPath.smooth();
+        newPath.simplify();
+        newPath = null;
+      }
+    };
+  };
+
+}
+
+export default PaperConfig;

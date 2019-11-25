@@ -1,0 +1,25 @@
+import csTools from 'cornerstone-tools';
+const BaseTool = csTools.importInternal('base/BaseTool');
+
+export default class PainterTool extends BaseTool {
+  constructor(name = 'Painter') {
+    super({
+      name,
+      supportedInteractionTypes: ['Mouse'],
+      mixins: ['activeOrDisabledBinaryTool'],
+    });
+  }
+
+  activeCallback(element) {
+    console.log(`Hello element ${element.uuid}!`);
+  }
+
+  disabledCallback(element) {
+    console.log(`Goodbye element ${element.uuid}!`);
+  }
+
+  preMouseDownCallback(evt) {
+    console.log('Hello cornerstoneTools!');
+  }
+
+}

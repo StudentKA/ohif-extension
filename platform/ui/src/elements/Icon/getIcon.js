@@ -81,6 +81,7 @@ import times from './icons/times.svg';
 import trash from './icons/trash.svg';
 import user from './icons/user.svg';
 import youtube from './icons/youtube.svg';
+import paintBrush from './icons/paintBrush.svg';
 
 const ICONS = {
   user,
@@ -164,6 +165,7 @@ const ICONS = {
   'soft-tissue': softTissue,
   lung,
   liver,
+  'paint-brush': paintBrush,
 };
 
 /**

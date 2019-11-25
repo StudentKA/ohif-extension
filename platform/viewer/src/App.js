@@ -28,6 +28,7 @@ import { getActiveContexts } from './store/layout/selectors.js';
 import i18n from '@ohif/i18n';
 import store from './store';
 import { SnackbarProvider } from '@ohif/ui';
+import OHIFSegmentationExtension from '../../../extensions/segmentation/src';
 
 // Contexts
 import WhiteLabellingContext from './context/WhiteLabellingContext';
@@ -173,6 +174,7 @@ function _initExtensions(extensions, hotkeys) {
     OHIFCornerstoneExtension,
     // WARNING: MUST BE REGISTERED _AFTER_ OHIFCORNERSTONEEXTENSION
     MeasurementsPanel,
+    OHIFSegmentationExtension,
   ];
   const mergedExtensions = defaultExtensions.concat(extensions);
   extensionManager.registerExtensions(mergedExtensions);
